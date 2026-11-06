@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Joyful Christmas 2026 — GenArise</title>
+  <style>
+    :root {
+      --pine: #0f3d2e;
+      --pine-dark: #09261c;
+      --gold: #d4af37;
+      --gold-light: #f3e5ab;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #4b5563;
+      --border: #e5e7eb;
+      --red: #b91c1c;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #09261c 0%, #0f3d2e 160px, #f4f6f3 160px, #f4f6f3 100%);
+      color: var(--text-main);
+      padding: max(16px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(24px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+      min-height: 100vh;
+    }
+    .container { max-width: 480px; margin: 0 auto; }
+    .header-card {
+      background: linear-gradient(135deg, #0f3d2e 0%, #17543f 100%);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+      padding: 24px 20px 20px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      margin-bottom: 16px;
+    }
+    .theme-pill {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.5px; }
+    h1 span { color: var(--gold); }
+    .subtitle { font-size: 13px; color: #cbd5e1; margin-bottom: 14px; }
+    .info-pills { display: flex; flex-direction: column; gap: 6px; }
+    .pill {
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 7px 12px;
+      font-size: 12.5px;
+      color: #f1f5f9;
+      text-align: center;
+    }
+    .pill.highlight {
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .form-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 22px 18px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .field-group { margin-bottom: 18px; }
+    label { display: block; font-size: 13.5px; font-weight: 600; color: #374151; margin-bottom: 6px; }
+    .req { color: var(--red); }
+    input[type="text"], input[type="tel"], select, textarea {
+      width: 100%;
+      height: 48px;
+      padding: 10px 14px;
+      font-size: 16px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      color: #111827;
+      appearance: none;
+    }
+    textarea { height: 72px; resize: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--pine); box-shadow: 0 0 0 3px rgba(15, 61, 46, 0.12); }
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: "▾";
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .stepper { display: flex; align-items: center; gap: 12px; }
+    .step-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 1.5px solid #d1d5db;
+      background: #f9fafb;
+      font-size: 20px;
+      font-weight: 700;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .step-btn:active { background: #e5e7eb; }
+    .pax-num { font-size: 20px; font-weight: 800; color: var(--pine); min-width: 36px; text-align: center; }
+    .gift-notice {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 11px 13px;
+      font-size: 12.5px;
+      color: #92400e;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .payment-box {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 18px;
+    }
+    .pay-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .pay-title { font-size: 14px; font-weight: 700; color: #065f46; }
+    .pay-amount { font-size: 18px; font-weight: 800; color: #065f46; }
+    .pay-desc { font-size: 12px; color: #047857; line-height: 1.4; }
+    .submit-btn {
+      width: 100%;
+      height: 52px;
+      background: linear-gradient(135deg, #0f3d2e 0%, #155e43 100%);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(15, 61, 46, 0.3);
+    }
+    .submit-btn:active { transform: scale(0.98); }
+    .contact-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      text-align: center;
+    }
+    .contact-card h4 { font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; font-weight: 600; }
+    .contact-buttons { display: flex; gap: 8px; justify-content: center; }
+    .contact-btn {
+      flex: 1;
+      height: 40px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #1f2937;
+      text-decoration: none;
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+    .modal-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px 20px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+    }
+    .modal-card h3 { font-size: 20px; color: var(--pine); margin-bottom: 6px; }
+    .modal-card p { font-size: 13px; color: #4b5563; margin-bottom: 16px; line-height: 1.4; }
+    .cal-btn {
+      width: 100%;
+      height: 46px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 8px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .cal-btn.google { background: #0f3d2e; color: #fff; border: none; }
+    .cal-btn.ics { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+    .close-modal { font-size: 13px; color: #9ca3af; margin-top: 10px; cursor: pointer; display: inline-block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-card">
+      <div class="theme-pill">✨ THEME: JOY ✨</div>
+      <h1>Joyful Christmas <span>2026</span></h1>
+      <p class="subtitle">GenArise Year-End Celebration & Fellowship</p>
+      <div class="info-pills">
+        <div class="pill">📅 Saturday, 28 November 2026 • 6:00 PM – 10:00 PM</div>
+        <div class="pill highlight">📍 Dewan Perdana, Bukit Kiara Equestrian & Country Resort</div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form id="regForm">
+        <div class="field-group">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" id="fullName" placeholder="Your name" required />
+        </div>
+
+        <div class="field-group">
+          <label>WhatsApp Contact <span class="req">*</span></label>
+          <input type="tel" id="phone" placeholder="e.g. 012-3456789" required />
+        </div>
+
+        <div class="field-group">
+          <label>Gen Arise Group <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="group" required>
+              <option value="" disabled selected>Select your group</option>
+              <option value="Cheryl & Christine">Cheryl & Christine</option>
+              <option value="Kin Meng & Anthony">Kin Meng & Anthony</option>
+              <option value="Wendy & Sam">Wendy & Sam</option>
+              <option value="Stephen & Shawn">Stephen & Shawn</option>
+              <option value="Siong & Winnie">Siong & Winnie</option>
+              <option value="Chit, Zhu Lian & Paul">Chit, Zhu Lian & Paul</option>
+              <option value="Guest / Non-CG">Guest / Non-CG</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Total Pax (Attending)</label>
+          <div class="stepper">
+            <div class="step-btn" id="minusBtn">–</div>
+            <div class="pax-num" id="paxDisplay">1</div>
+            <div class="step-btn" id="plusBtn">+</div>
+          </div>
+        </div>
+
+        <div class="payment-box">
+          <div class="pay-header">
+            <span class="pay-title">Payment Method</span>
+            <span class="pay-amount" id="totalFeeDisplay">RM 100</span>
+          </div>
+          <div class="pay-desc">
+            <strong>Pay to Group Leader</strong><br />
+            Please pass <span id="feeReminder">RM 100</span> directly (cash or DuitNow) to your Gen Arise Group Leader.
+          </div>
+        </div>
+
+        <div class="gift-notice">
+          🎁 <strong>Gift Exchange Reminder:</strong> Please prepare 1 wrapped gift with a minimum value of <strong>RM 30</strong> (unisex / practical).
+        </div>
+
+        <div class="field-group">
+          <label>Remarks / Notes (Optional)</label>
+          <textarea id="remarks" placeholder="Guest names, questions, or notes..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" id="subBtn">
+          <span>🎄 Register Now</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-card">
+      <h4>Need more info? Contact:</h4>
+      <div class="contact-buttons">
+        <a class="contact-btn" href="https://wa.me/60178907512?text=Hi%20Anthony,%20asking%20about%20GenArise%20Christmas" target="_blank">💬 Anthony</a>
+        <a class="contact-btn" href="https://wa.me/60178123557?text=Hi%20Hilary,%20asking%20about%20GenArise%20Christmas" target="_blank">💬 Hilary</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-card">
+      <div style="font-size: 40px; margin-bottom: 8px;">🎉</div>
+      <h3>You're Registered!</h3>
+      <p>We look forward to celebrating Joyful Christmas 2026 together. Would you like to lock this into your calendar?</p>
+      
+      <a class="cal-btn google" id="gCalLink" target="_blank">📅 Add to Google Calendar</a>
+      <button class="cal-btn ics" id="icsBtn">🗓️ Save (.ics file)</button>
+      <div class="close-modal" id="closeModal">Done / Close</div>
+    </div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw-uZE8Ge4-d1iAH2Po2NAldVrqXTf3fVQuZCDmuG7bJgphlIWWAz43y28kDfl6aSgJjQ/exec";
+
+    let pax = 1;
+    const minusBtn = document.getElementById('minusBtn');
+    const plusBtn = document.getElementById('plusBtn');
+    const paxDisplay = document.getElementById('paxDisplay');
+    const totalFeeDisplay = document.getElementById('totalFeeDisplay');
+    const feeReminder = document.getElementById('feeReminder');
+
+    function updateFee() {
+      paxDisplay.textContent = pax;
+      const total = pax * 100;
+      totalFeeDisplay.textContent = 'RM ' + total;
+      feeReminder.textContent = 'RM ' + total;
+    }
+
+    minusBtn.addEventListener('click', () => { if (pax > 1) { pax--; updateFee(); } });
+    plusBtn.addEventListener('click', () => { if (pax < 20) { pax++; updateFee(); } });
+
+    document.getElementById('regForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const subBtn = document.getElementById('subBtn');
+      subBtn.disabled = true;
+      subBtn.textContent = 'Submitting...';
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const group = document.getElementById('group').value;
+      const totalFee = pax * 100;
+      const notes = document.getElementById('remarks').value.trim();
+
+      // Build safe URL query string
+      const params = new URLSearchParams({
+        fullName: fullName,
+        phone: phone,
+        group: group,
+        pax: pax,
+        totalFee: totalFee,
+        notes: notes
+      });
+
+      // Beacon Ping - sends data across all browsers without CORS/iframe blocks
+      const beacon = new Image();
+      beacon.src = SCRIPT_URL + "?" + params.toString() + "&nocache=" + new Date().getTime();
+
+      // Setup Calendar links
+      const title = encodeURIComponent("GenArise Joyful Christmas 2026");
+      const details = encodeURIComponent("GenArise Joyful Christmas Celebration\nTheme: JOY\nGift Exchange: Min RM30\nContacts: Anthony (017-8907512) | Hilary (017-8123557)");
+      const location = encodeURIComponent("Dewan Perdana, Bukit Kiara Equestrian & Country Resort");
+      document.getElementById('gCalLink').href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261128T100000Z/20261128T140000Z&details=${details}&location=${location}`;
+
+      setTimeout(() => {
+        document.getElementById('successModal').style.display = 'flex';
+        subBtn.disabled = false;
+        subBtn.textContent = '🎄 Register Now';
+      }, 500);
+    });
+
+    document.getElementById('icsBtn').addEventListener('click', () => {
+      const ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "BEGIN:VEVENT",
+        "SUMMARY:GenArise Joyful Christmas 2026",
+        "LOCATION:Dewan Perdana\\, Bukit Kiara Equestrian & Country Resort",
+        "DESCRIPTION:GenArise Joyful Christmas (Theme: JOY). Gift exchange min RM30. Contacts: Anthony (017-8907512) | Hilary (017-8123557)",
+        "DTSTART:20261128T100000Z",
+        "DTEND:20261128T140000Z",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+      const blob = new Blob([ics], { type: "text/calendar" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "GenArise_Joyful_Christmas_2026.ics";
+      a.click();
+    });
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('successModal').style.display = 'none';
+      document.getElementById('regForm').reset();
+      pax = 1;
+      updateFee();
+    });
+  </script>
+</body>
+</html>
